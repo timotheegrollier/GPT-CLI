@@ -1,4 +1,4 @@
-
+#!/usr/bin/python3
 from gpt4free import you
 
 # simple request with links and details
@@ -20,11 +20,15 @@ print(response.dict())
 # chatbot
 
 chat = []
+print("\n")
 
 while True:
     prompt = input("You: ")
     if prompt == 'q':
         break
+    elif prompt == 'exit':
+        break
+    print("\n")
     response = you.Completion.create(
         prompt=prompt,
         chat=chat)
